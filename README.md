@@ -58,7 +58,7 @@ A fully featured, highly optimized bus simulator built from the ground up.
 - ✅ Interactive vehicle systems
 - ✅ Passenger management gameplay
 - ✅ Custom optimization scripts for buttery-smooth FPS
-- 🔲 *(next drop - add your upcoming feature here)*
+- 🔲 *(next drop - upcoming feature here)*
 
 **🎁 Loot:** [`View Repository →`](https://github.com/progmanish/City-Bus-Simulator)
 
