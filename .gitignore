@@ -1,2 +1,17 @@
-#Folder
-video
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local files
+.DS_Store
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors
+.vscode/
+.idea/

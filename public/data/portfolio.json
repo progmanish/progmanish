@@ -1,0 +1,464 @@
+{
+  "user": {
+    "logo": "progmanish",
+    "name": "Manish",
+    "title": "Game Programmer | Engineer",
+    "location": "India",
+    "slogan": "From movement to meaning, I engineer experiences that feel cinematic and alive. Gameplay is my language, code is my craft.",
+    "bio": "Game Programmer and Engineer with expertise in Unity (C#) and Unreal Engine (C++/Blueprints). I specialize in gameplay mechanics, performance optimization, and scalable game architecture that turn creative vision into smooth, playable realities."
+  },
+  "menu": {
+    "title": "progmanish",
+    "subtitle": "",
+    "tabs": [
+      { "id": "outfit", "label": "Outfit", "icon": "bx bxs-shield-alt-2" },
+      { "id": "innerraise", "label": "Inner-Raise", "icon": "bx bxs-tree" },
+      { "id": "inventory", "label": "Inventory", "icon": "bx bxs-backpack" },
+      { "id": "journal", "label": "Journal", "icon": "bx bxs-book-bookmark" },
+      { "id": "settings", "label": "Settings", "icon": "bx bxs-cog" }
+    ]
+  },
+  "appearance": {
+    "nameplate": "MANISH KUMAR SINGH",
+    "characterClass": "Game Programmer / Engineer",
+    "level": "Lv. 24",
+    "realmStages": ["Novice", "Disciple", "Adept", "Expert", "Master", "Grandmaster"],
+    "realmIndex": 2,
+    "gear": [
+      { "slot": "Weapon", "name": "C++", "icon": "devicon-cplusplus-plain" },
+      { "slot": "Armor", "name": "Gameplay Systems", "icon": "devicon-unrealengine-original" },
+      { "slot": "Relic", "name": "AI & Behavior Trees", "icon": "devicon-unity-plain" },
+      { "slot": "Talisman", "name": "Blender / Shaders", "icon": "devicon-blender-original" }
+    ],
+    "stats": [
+      { "name": "Unreal Engine", "value": 55, "color": "#d4af37" },
+      { "name": "Unity", "value": 60, "color": "#4d9fff" },
+      { "name": "C++", "value": 75, "color": "#ff5d73" },
+      { "name": "C#", "value": 50, "color": "#5dd4ff" },
+      { "name": "Physics Programming", "value": 60, "color": "#a05fff" },
+      { "name": "AI Programming", "value": 50, "color": "#ff9f43" },
+      { "name": "Blender", "value": 60, "color": "#3dce8a" },
+      { "name": "Shader Graph", "value": 40, "color": "#ffd700" }
+    ]
+  },
+  "skillTree": {
+    "title": "Self-Advance",
+    "cultivationTitle": "Ascension",
+    "branches": [
+      {
+        "id": "engines",
+        "name": "WORLD ENGINES",
+        "color": "#f4c94f",
+        "icon": "bx bxs-cog",
+        "desc": "",
+        "nodes": [
+          { "name": "Unreal Engine", "level": 65, "icon": "devicon-unrealengine-original", "desc": "C++ driven gameplay, AI controllers, behavior trees and cinematic systems crafted for player-first experiences." },
+          { "name": "Unity", "level": 60, "icon": "devicon-unity-plain", "desc": "2D & 3D games, tilemaps, HDRP/URP lighting pipelines and modular gameplay systems." },
+          { "name": "Gameplay Programming", "level": 60, "icon": "bx bxs-joystick", "desc": "Modular mechanics, input flows and the systems glue that turn features into play." }
+        ]
+      },
+      {
+        "id": "programming",
+        "name": "CORE CODE",
+        "color": "#4d9fff",
+        "icon": "bx bxs-terminal",
+        "desc": "",
+        "nodes": [
+          { "name": "C++", "level": 80, "icon": "devicon-cplusplus-plain", "desc": "Systems architecture, memory-safe gameplay code, and engine-level problem solving." },
+          { "name": "C#", "level": 50, "icon": "devicon-csharp-plain", "desc": "Clean, maintainable gameplay logic across Unity projects of every scale." },
+          { "name": "Networking & Multiplayer", "level": 48, "icon": "bx bx-share-alt", "desc": "Replication, rollback and latency-hiding - one synchronous world from many async wires." }
+        ]
+      },
+      {
+        "id": "intelligence",
+        "name": "LIVING MINDS",
+        "color": "#a07bff",
+        "icon": "bx bxs-brain",
+        "desc": "",
+        "nodes": [
+          { "name": "AI Programming", "level": 60, "icon": "bx bxs-brain", "desc": "Behavior trees, blackboards, perception, patrol/chase/combat loops and enemy intelligence." },
+          { "name": "Physics Programming", "level": 65, "icon": "bx bxs-cylinder", "desc": "Movement feel, collision responses, root motion and physics-driven interactions." },
+          { "name": "Procedural Systems", "level": 40, "icon": "bx bxs-shapes", "desc": "Algorithms that grow dungeons, terrain and encounters at runtime." }
+        ]
+      },
+      {
+        "id": "design",
+        "name": "WORLDCRAFT",
+        "color": "#ff6fa5",
+        "icon": "bx bxs-map-alt",
+        "desc": "",
+        "nodes": [
+          { "name": "Level Design", "level": 65, "icon": "bx bxs-map-pin", "desc": "Pacing, sightlines and flow - orchestrating emotion through space." },
+          { "name": "Systems Design", "level": 70, "icon": "bx bxs-widget", "desc": "Rules, economies and loops that reward curiosity and mastery." },
+          { "name": "Game Prototyping", "level": 75, "icon": "bx bxs-flask", "desc": "Failing fast with paper and gray boxes until an idea earns its place." }
+        ]
+      },
+      {
+        "id": "art-tools",
+        "name": "FORGE & CANVAS",
+        "color": "#37d39a",
+        "icon": "bx bxs-palette",
+        "desc": "",
+        "nodes": [
+          { "name": "Shader Graph", "level": 50, "icon": "bx bxs-palette", "desc": "Stylized materials, procedural effects and visual feedback via shader pipelines." },
+          { "name": "Blender", "level": 70, "icon": "devicon-blender-original", "desc": "Modeling, rigging and asset creation to bridge the gap between code and art." },
+          { "name": "VFX & Particles", "level": 45, "icon": "bx bxs-star", "desc": "Juice, feedback and fire - the fireworks that sell a hit." }
+        ]
+      }
+    ]
+  },
+  "skills": [
+    { "name": "Unreal Engine", "level": "50%" },
+    { "name": "Unity", "level": "60%" },
+    { "name": "C++", "level": "80%" },
+    { "name": "C#", "level": "50%" },
+    { "name": "AI Programming", "level": "60%" },
+    { "name": "Physics Programming", "level": "55%" },
+    { "name": "Shader Graph", "level": "45%" },
+    { "name": "Blender", "level": "70%" }
+  ],
+  "projects": {
+    "completed-games": [
+      {
+        "id": "completed-game-1",
+        "title": "City Bus Simulator",
+        "description": ["A fully featured, highly optimized <h3>3D Bus Simulator game</h3> built in Unity for Android and PC platforms. The project focuses on realistic driving mechanics, interactive vehicle systems, passenger management, and peak performance achieved through custom algorithms and clean code architecture.",
+        "<h2>Core Systems & Features</h2>",
+        "✦ <h3>Camera & Driving Controls</h3>",
+        "• <h3>Perspective Switching:</h3> Toggle seamlessly between Third-Person View for broad navigation and Driver/Cockpit View for an immersive simulation experience.",
+        "• <h3>Transmission & Gears:</h3> Full Drive and Reverse gear support with smooth speed and torque transitions.",
+        "• <h3>Dual Steering Input:</h3> Dual-input system supporting both Touch/UI Steering Wheel and Arrow/Touch Buttons for flexible control across devices.",
+        "✦ <h3>Interactive Vehicle Systems</h3>",
+        "• <h3>Engine & Electricals:</h3> Functional Engine On/Off system along with working headlights and indicator lights.",
+        "• <h3>Interactive Components:</h3> Open/Close door mechanics linked to passenger entry and exit routines.",
+        "• <h3>Fuel Management:</h3> Refueling mechanics integrated with map-based Fuel Stations for ongoing resource management.",
+        "✦ <h3>Gameplay & Passenger Mechanics</h3>",
+        "• <h3>Bus Stop System:</h3> Designated pickup and drop-off zones featuring animated passengers boarding and alighting from the bus.",
+        "• <h3>Navigation & Flow:</h3> Map structure designed to facilitate smooth transit between urban bus stops and service points.",
+        "✦ <h3>UI, Menus & Flow</h3>",
+        "• <h3>Cinematic Intro:</h3> Video playback landing screen with tap-to-continue functionality.",
+        "• <h3>Bus Selection Menu:</h3> Interactive vehicle selection interface allowing players to choose their bus before entering the city map.",
+        "✦ <h3>Performance Optimization & Code Quality</h3>",
+        "• <h3>Custom Optimization Scripts:</h3> Bespoke optimization scripts written specifically to ensure stable frame rates on low-to-mid-range Android devices as well as PC.",
+        "• <h3>DSA-Driven Architecture:</h3> Codebase engineered using Data Structures and Algorithms principles to keep memory usage minimal, avoid garbage collection spikes, and optimize execution speed."
+        ],
+        "video": "https://drive.google.com/file/d/11KVlpOAV9ZgOLh3Wo3ZowkYvx0N-3TFV/preview",
+        "thumbnail": "images/city_bus_simulator.png",
+        "tech": ["Unity", "3D", "Simulator"],
+        "repo": "https://github.com/progmanish/City-Bus-Simulator",
+        "live": "https://github.com/progmanish/City-Bus-Simulator/releases/tag/v.1.0.6"
+      },
+      {
+        "id": "completed-game-2",
+        "title": "The Last Emberlight",
+        "description": ["<h3>The Last Emberlight</h3> is a 2D top-down adventure game inspired by classics like The Legend of Zelda. Built in Unity, it combines tile-based world design, sprite-driven visuals, and modular gameplay systems to create an immersive, scalable experience. The project emphasizes smart AI, dynamic interaction, and expressive UI feedback-perfect for expanding into a full-fledged narrative-driven title.",
+        "<h2>Core Systems & Features</h2>",
+        "✦ <h3>Tilemap & Sprite Architecture:</h3> World built using Unity’s tile palette system for seamless terrain, dungeons, and interiors. Characters and objects use hand-crafted sprites with layered animations.",
+        "✦ <h3>Character Movement System:</h3> Supports four-directional movement (up, down, left, right) with smooth transitions, collision handling, and contextual animations.",
+        "✦ <h3>Interaction & Pickup System:</h3> Players can interact with NPCs, open chests, collect items, and trigger events. Includes prompt-based UI and inventory integration.",
+        "✦ <h3>Smart Enemy AI:</h3> Enemies use behavior trees for patrolling, chasing, and attacking. Includes line-of-sight detection, obstacle avoidance, and difficulty scaling.",
+        "✦ <h3>Combat System:</h3> Real-time melee and ranged combat with hit detection, knockback, and cooldown logic. Includes weapon switching and attack animations.",
+        "✦ <h3>Damage & Health System:</h3> Modular damage handling with health bars, invincibility frames, and death states. Supports both player and enemy entities.",
+        "✦ <h3>Player Navigation System:</h3> Includes minimap tracking, location markers, and contextual hints to guide exploration and quest progression.",
+        "✦ <h3>Smart NPC AI:</h3> Dialogue-driven NPCs with schedules, reactions, and branching interactions. Includes quest triggers and dynamic world responses.",
+        "✦ <h3>Inventory System:</h3> Grid-based inventory with item stacking, equipment slots, and drag-and-drop functionality. Supports consumables, gear, and quest items.",
+        "✦ <h3>UI System:</h3> Displays health, coins, minimap, equipped items, and interaction prompts. Designed for clarity and minimalism with animated transitions.",
+        "• Save/load architecture and player progression tracking.",
+        "• Quest system with branching narratives and dynamic outcomes.",
+        "• Environmental puzzles and dungeon mechanics.",
+        "• Visual polish for UI and combat feedback."],
+        "video": "https://drive.google.com/file/d/1MvLqsdSJEx3YghdRTIstAIVdXrDd51H3/preview",
+        "thumbnail": "images/the_last_emberlight.png",
+        "tech": ["Unity", "2D", "Adventure"],
+        "repo": "https://github.com/mechanicxengineer/2D-Open-World",
+        "live": ""
+      },
+      {
+        "id": "completed-game-3",
+        "title": "Monster Hunt",
+        "description": ["<h3>Monster Hunt</h3> is a third-person shooter prototype designed to showcase a complete, immersive gameplay loop. Built with modular architecture and expressive feedback systems, it integrates advanced animation, responsive combat mechanics, and intelligent enemy behavior-ideal for cinematic action experiences and scalable game development.",
+        "<h2>Core Systems & Features</h2>",
+        "✦ <h3>Third-Person Movement Controller:</h3> Smooth camera-relative locomotion with sprinting, crouching, vaulting, and jump states. Includes root motion and physics-based transitions.",
+        "✦ <h3>FABRIK-Based Advanced Animation:</h3> Real-time inverse kinematics for precise hand and weapon alignment, dynamic aiming, and contextual interactions like climbing and ledge grabbing.",
+        "✦ <h3>Health & Damage Architecture:</h3> Modular health system with customizable damage types, resistances, and death triggers. Supports both player and AI entities with clean event-driven logic.",
+        "✦ <h3>Floating Damage Numbers:</h3> Stylized feedback system for hit confirmation. Includes critical hit indicators, scaling animations, and color-coded damage types.",
+        "✦ <h3>Weapon Inventory & Switching:</h3> Slot-based inventory with support for primary, secondary, and throwable weapons. Includes equip animations and seamless switching logic.",
+        "✦ <h3>Firing & Reloading Mechanics:</h3> Supports semi-auto, burst, and full-auto fire modes, reload interruptions, and synced ammo updates. Includes dry fire and reload feedback.",
+        "✦ <h3>Ammo & Gun UI Indicators:</h3> HUD elements for current weapon, ammo count, reload status, and weapon type. Designed for clarity and minimal screen clutter.",
+        "✦ <h3>Ammo Collection System:</h3> World pickups with contextual prompts, stacking logic, and auto-collect zones. Includes visual and audio feedback.",
+        "✦ <h3>Visual Effects Suite:</h3> Muzzle flashes, impact sparks, reload particles, and ambient FX. Designed for performance and style using modular VFX components.",
+        "✦ <h3>Smart AI Enemies:</h3> Behavior-driven AI with patrol, chase, and combat states. Includes line-of-sight detection, cover-seeking, flanking logic, and dynamic reaction to player actions. Supports difficulty scaling and modular behavior trees."],
+        "video": "https://drive.google.com/file/d/1tRuiKT877iWEBaatgQi1HAaNpXsdToZ2/preview",
+        "thumbnail": "images/monster_hunt.png",
+        "tech": ["Unreal Engine", "C++"],
+        "repo": "https://github.com/mechanicxengineer/Monster-hunt",
+        "live": ""
+      },
+      {
+        "id": "completed-game-4",
+        "title": "MinerCore Tycoon",
+        "description": ["<h3>MinerCore Tycoon</h3> is a 2D idle mining simulator built in <h3>Unity</h3>, designed to demonstrate scalable systems for automation, resource flow, and visual feedback. The game blends sprite-based visuals with skeletal animation and modular gameplay loops, making it ideal for mobile or desktop platforms.",
+        "<h2>Core Systems & Features</h2>",
+        "✦ <h3>Sprite-Based Visuals & 2D Skeletal Animation:</h3> Combines hand-crafted sprites with Unity’s skeletal rigging for smooth, expressive character animations-ideal for workers, managers, and machinery.",
+        "✦ <h3>AI Workers & Managers:</h3> Autonomous agents with task assignment logic. Workers mine resources, while managers boost efficiency, automate upgrades, and reduce cooldowns.",
+        "✦ <h3>Work Timer System:</h3> Each mining task is governed by a timer loop. Includes visual countdowns, progress bars, and manager-based acceleration logic.",
+        "✦ <h3>Upgrade System:</h3> Tiered upgrades for mining speed, worker efficiency, storage capacity, and automation. Includes UI feedback and cost scaling.",
+        "✦ <h3>Storage & Capacity System:</h3> Dynamic resource storage with overflow logic. Players must upgrade capacity to avoid bottlenecks and maximize idle gains.",
+        "✦ <h3>Currency System with Smart Formatting:</h3> Implements a scalable currency system with automatic formatting (e.g., 1,000 → 1K, 1,000,000 → 1M) for clean UI and intuitive progression."],
+        "video": "https://drive.google.com/file/d/1cOKSjyD3cKSFQ5yKamrBpq-A4rA0NtcI/preview",
+        "thumbnail": "images/minercore_tycoon.png",
+        "tech": ["Unity", "Resource Management"],
+        "repo": "https://github.com/mechanicxengineer/Idle-Miner-Game",
+        "live": ""
+      },
+      {
+        "id": "completed-game-5",
+        "title": "Fruity Match",
+        "description": ["<h3>Fruity Match 3x3</h3> is a vibrant 2D puzzle game built in <h3>Unity</h3>, featuring a classic match-3 mechanic with a juicy twist. Designed with polished visuals and responsive UI, the game challenges players to match colorful fruit tiles within a limited number of moves and a ticking timer-perfect for quick, satisfying gameplay sessions.",
+        "<h2>Core Systems & Features</h2>",
+        "✦ <h3>Sprite-Based Visuals:</h3> Hand-crafted fruit sprites with smooth animations and playful effects for matches, combos, and tile swaps.",
+        "✦ <h3>3x3 Match Grid:</h3> Compact grid layout optimized for mobile and desktop play. Supports drag-and-swap mechanics with match detection and cascading logic.",
+        "✦ <h3>Timer & Move Limit System:</h3> Each level includes a countdown timer and a fixed number of moves, encouraging strategic play and replayability.",
+        "✦ <h3>Polished UI Design:</h3> Clean, animated interface showing score, remaining moves, timer, and match feedback. Includes sound cues and visual pop for combos.",
+        "✦ <h3>Juicy Feedback & Effects:</h3> Particle bursts, screen shakes, and combo animations enhance the tactile feel of every match."],
+        "video": "https://drive.google.com/file/d/1AoEH7cRlEhQqWEunkE1GXYXihFOMC3kd/preview",
+        "thumbnail": "images/fruity_match.png",
+        "tech": ["Unity", "2D"],
+        "repo": "https://github.com/mechanicxengineer/Fruity-Match",
+        "live": "https://github.com/progmanish/Fruity-Match/releases/tag/v1.4.0"  
+      }
+    ],
+    "tech-demos": [
+      {
+        "id": "tech-demo-1",
+        "title": "TLD: Smart AI - 2D AI Navigation",
+        "description": ["This is an <h3>Advanced AI learning</h3> demo built in Unity, designed to showcase real-time obstacle avoidance and intelligent pathfinding in a 2D sprite-based environment. This project demonstrates how AI agents can dynamically navigate complex spaces using collision detection and adaptive movement logic-ideal for top-down games, stealth mechanics, or simulation systems.",
+        "<h2>Core AI Systems</h2>",
+        "✦ <h3>2D Sprite-Based Visuals:</h3> Characters and obstacles are rendered using crisp 2D sprites, with smooth animations and layered visual feedback.",
+        "✦ <h3>AI Navigation & Obstacle Avoidance:</h3> AI agents use raycasting and physics-based detection to identify nearby obstacles and dynamically adjust their path in real time. Includes steering behaviors and fallback logic for tight spaces.",
+        "✦ <h3>Collision Detection System:</h3> Built on Unity’s 2D physics engine, the system detects and responds to walls, dynamic objects, and other agents. Ensures smooth navigation without overlaps or jitter.",
+        "✦ <h3>Adaptive Movement Logic:</h3> AI agents adjust speed, direction, and decision-making based on environmental context. Includes obstacle prediction and re-routing behaviors.",
+        "✦ <h3>Modular AI Architecture:</h3> Designed with scalability in mind-easily extendable to support patrols, target chasing, or group formations."],
+        "video": "https://drive.google.com/file/d/1EDkjg5lQkpeEwpnlIO5onpr1hmbl3WUX/preview",
+        "thumbnail": "images/smart_ai_2d.png",
+        "tech": ["Unity", "C#"],
+        "repo": ""
+      },
+      {
+        "id": "tech-demo-2",
+        "title": "TLD: Smart AI - Attack and Straf",
+        "description": ["This is an <h3>Advanced AI behavior</h3> demo built in Unreal Engine, focused on reactive combat logic and modular decision-making. It showcases how AI agents can transition between patrol, attack, and evasive maneuvers using Unreal’s native AI framework-ideal for stealth-action, shooter, or RPG prototypes.",
+        "<h2>Core AI Systems</h2>",
+        "✦ <h3>AI Controller Framework:</h3> Each enemy is governed by a custom AI Controller that interfaces with Behavior Trees and Blackboard data for dynamic state transitions.",
+        "✦ <h3>Blackboard & Behavior Tree Architecture:</h3> Centralized logic using Blackboard keys to track player visibility, attack cooldowns, and movement states. Behavior Trees orchestrate transitions between patrol, engage, attack, and strafe.",
+        "✦ <h3>BTT_Tasks (Behavior Tree Tasks):</h3> Custom task nodes for movement, attack execution, cooldown handling, and strafe direction. Modular design allows easy reuse and expansion.",
+        "✦ <h3>BTD_Decorators (Behavior Tree Decorators):</h3> Conditional checks for player proximity, line-of-sight, attack readiness, and strafe eligibility. Used to gate transitions and prevent logic conflicts.",
+        "✦ <h3>Combat & Strafing Behavior:</h3> AI agents detect the player, initiate attacks, and immediately strafe left or right post-attack to simulate evasive combat. Includes cooldown logic, animation triggers, and pathfinding adjustments."],
+        "video": "https://drive.google.com/file/d/1k0ZB8X-XyPQEBDD6As3WVGqgf7V3_TQ1/preview",
+        "thumbnail": "images/smart_ai_attack_and_straf.png",
+        "tech": ["Unreal Engine", "Blueprints"],
+        "repo": ""
+      },
+      {
+        "id": "tech-demo-3",
+        "title": "TLD: Smart AI - Patrol and Chase",
+        "description": ["This Logic is an <h3>Advanced AI behavior</h3> demo built in Unreal Engine, designed to showcase dynamic decision-making, modular patrol logic, and reactive enemy intelligence. The project leverages Unreal’s AI framework-including AI Controllers, Behavior Trees, and Blackboard systems-to simulate lifelike enemy behavior in a stealth-action environment.",
+        "<h2>Core AI Systems</h2>",
+        "✦ <h3>AI Controller Architecture:</h3> Each enemy is governed by a custom AI Controller that interfaces with Behavior Trees and Blackboard data for modular decision-making.",
+        "✦ <h3>Blackboard & Behavior Tree Integration:</h3> Centralized data-driven logic using Blackboard keys to track player visibility, patrol states, and chase triggers. Behavior Trees orchestrate transitions between idle, patrol, alert, and chase states.",
+        "✦ <h3>BTT_Tasks (Behavior Tree Tasks):</h3> Custom task nodes handle movement, waiting, animation triggers, and chase logic. Includes modular task design for easy reuse and expansion.",
+        "✦ <h3>BTD_Decorators (Behavior Tree Decorators):</h3> Conditional checks for visibility, distance, and state transitions. Used to gate behaviors like chasing, returning to patrol, or triggering alerts.",
+        "✦ <h3>Patrol & Chase System:</h3> AI agents follow predefined patrol paths. Upon detecting the player (via line-of-sight or perception), they dynamically switch to chase mode with pathfinding and obstacle avoidance."],
+        "video": "https://drive.google.com/file/d/1DNgO1S5quF_TGpokGyMRGS9ETIIRbNkO/preview",
+        "thumbnail": "images/smart_ai_patrol_and_chase.png",
+        "tech": ["Unreal Engine", "Blueprints"],
+        "repo": ""
+      },
+      {
+        "id": "tech-demo-4",
+        "title": "TLD: Smart AI - Parry - Block",
+        "description": ["This is an <h3>Advanced AI behavior</h3> demo built in Unreal Engine, designed to showcase intelligent enemy defense mechanics in real-time combat scenarios. Using Unreal’s AI Controller, Blackboard, and Behavior Tree systems, this project demonstrates how AI agents can dynamically parry melee attacks and block incoming projectiles-creating lifelike, reactive combat encounters.",
+        "<h2>Core AI Systems</h2>",
+        "AI Controller Framework:</h3> Custom AI Controllers manage perception, decision-making, and animation triggers. Each agent responds to player actions with layered defensive logic.",
+        "✦ <h3>Blackboard & Behavior Tree Architecture:</h3> Centralized data-driven logic using Blackboard keys to track player proximity, attack states, projectile detection, and defensive cooldowns. Behavior Trees orchestrate transitions between idle, engage, parry, and block states.",
+        "✦ <h3>BTT_Tasks (Behavior Tree Tasks):</h3> Includes modular tasks for parrying melee attacks, blocking projectiles, cooldown resets, and animation syncing. Designed for reuse across multiple enemy types.",
+        "✦ <h3>BTD_Decorators (Behavior Tree Decorators):</h3> Conditional checks for timing windows, attack direction, projectile velocity, and stamina thresholds. Used to gate defensive actions and prevent logic conflicts.",
+        "✦ <h3>Parry & Block Mechanics:</h3> AI agents detect incoming attacks and respond with timed parries or directional blocks. Includes animation blending, hit reaction suppression, and counter-attack triggers."],
+        "video": "https://drive.google.com/file/d/1qyDRXI_LDC-HDqIlZtxSBMO5JQPPqArK/preview",
+        "thumbnail": "images/smart_ai_parry_and_block.png",
+        "tech": ["Unreal Engine", "Blueprints"],
+        "repo": ""
+      },
+      {
+        "id": "tech-demo-5",
+        "title": "TLD: Smart AI - Ai vs Ai",
+        "description": ["This is an <h3>Advanced AI learning</h3> demo built in Unreal Engine, showcasing autonomous combat between two distinct AI archetypes: a melee fighter and a ranged gunner. Using Unreal’s AI Controller, Blackboard, and Behavior Tree systems, the project demonstrates modular decision-making, reactive combat behavior, and dynamic state transitions-ideal for prototyping enemy factions, PvE scenarios, or training simulations.",
+        "<h2>Core AI Systems</h2>",
+        "✦ <h3>AI Controller Framework: Each AI agent is governed by a custom AI Controller that manages perception, movement, and combat logic. Controllers interface with Behavior Trees and Blackboard data for real-time decision-making.",
+        "✦ <h3>Blackboard & Behavior Tree Architecture: Centralized logic using Blackboard keys to track enemy location, attack readiness, health status, and tactical positioning. Behavior Trees orchestrate transitions between patrol, engage, attack, and evade states.",
+        "✦ <h3>BTT_Tasks (Behavior Tree Tasks): Includes custom tasks for melee attacks, ranged shooting, cooldown handling, movement, and animation syncing. Each AI type uses specialized tasks tailored to its combat style.",
+        "✦ <h3>BTD_Decorators (Behavior Tree Decorators): Conditional checks for line-of-sight, distance thresholds, attack cooldowns, and health levels. Used to gate combat actions and trigger evasive maneuvers.",
+        "✦ <h3>Melee AI: Closes distance, initiates attacks with timed animations, and reacts to ranged damage with chase or retreat logic.",
+        "✦ <h3>Ranged AI: Maintains distance, fires projectiles using line-of-sight checks, and strafes to avoid melee threats. Includes reload and ammo tracking systems.",
+        "✦ <h3>Dynamic Combat Loop: Both AI agents engage autonomously, adapting to each other's behavior. Includes hit detection, damage feedback, and reactive movement based on combat outcomes."],
+        "video": "https://drive.google.com/file/d/1rDCzlRiO_Twb-ghOIhpjXuBzWHWbt3aG/preview",
+        "thumbnail": "images/smart_ai_vs_ai.png",
+        "tech": ["Unreal Engine", "Blueprints"],
+        "repo": ""
+      }
+    ],
+    "personal-projects": {
+        "experimental": [
+            {
+              "id": "personal-experimental-1",
+              "title": "Procedural Dragon Motion",
+              "description": ["This is a procedural animation and movement built in <h3>Unreal Engine</h3>, exploring the fusion of modular geometry and organic motion. The project focuses on generating a chain of connected cubes that simulate the elegant, serpentine movement of a flying <h3>Chinese dragon-entirely through procedural logic and without skeletal rigs or pre-made assets.</h3>",
+              "<h2>Core Systems & Features</h2>",
+              "✦ <h3>Procedural Cube Generation:</h3> The entire structure is built using only cube meshes, spawned and positioned dynamically in a chain formation. Each cube inherits and offsets its position based on the one ahead, creating a flowing, tail-following effect.",
+              "✦ <h3>Chain Connection System:</h3> A modular system links each cube to the next using transform inheritance and offset logic. The chain maintains spacing, orientation, and smooth transitions, allowing for real-time expansion or contraction.",
+              "✦ <h3>Dragon-Like Flying Movement:</h3> The head of the chain follows a sinusoidal or spline-based path, while the rest of the body flows behind it with delay and curvature - mimicking the graceful, wave-like motion of a traditional Chinese dragon in flight.",
+              "✦ <h3>Fully Procedural Logic:</h3> No skeletal meshes or animations are used. All movement, spacing, and orientation are handled through blueprint logic and mathematical functions, making the system lightweight and highly customizable.",
+              "✦ <h3>Experimental Use Cases:</h3> Ideal for exploring procedural animation, AI path-following, or visual effects prototyping. The system can be extended into enemy formations, boss tentacles, or stylized environmental effects."],
+              "video": "https://drive.google.com/file/d/1_9PXH4ZE6Li5-g8ciEOT9gzGOsCMcsfS/preview",
+              "thumbnail": "images/procedural_dragon.png",
+              "tech": ["Unreal Engine", "Blueprints"],
+              "repo": ""
+            },
+            {
+              "id": "personal-experimental-2",
+              "title": "Inventory System",
+              "description": ["This is a lightweight inventory system built in <h3>Unreal Engine using C++</h3>, designed to explore intuitive item management, interactive UI feedback, and modular gameplay integration. The project focuses on creating a simple yet expressive inventory experience-ideal for RPGs, survival games, or sandbox systems.",
+              "<h2>Core Systems & Features</h2>",
+              "✦ <h3>Item Pickup & Storage:</h3> Players can interact with world items and store them in a grid-based inventory. Implemented in C++ for efficient memory handling and real-time responsiveness.",
+              "✦ <h3>Hover Descriptions:</h3> Each item displays a contextual tooltip when hovered, showing name, type, and a short description. Tooltip logic and UI binding are handled via C++ and UMG.",
+              "✦ <h3>Drag & Drop Removal:</h3> Items can be dragged out of the inventory to discard or drop them back into the world. Includes slot reordering, visual feedback, and blueprint-exposed C++ functions for flexibility.",
+              "✦ <h3>Modular Inventory UI:</h3> Clean, animated interface built with UMG and backed by C++ logic. Supports item icons, stack counts, slot highlighting, and dynamic updates."],
+              "extra" : ["Additional Features:",
+              "Item stacking and quantity tracking.",
+              "Slot locking and restricted item types.",
+              "Sound and visual effects for pickup, drop, and hover.",
+              "Blueprint-callable C++ functions for easy customization and extension."],
+              "video": "https://drive.google.com/file/d/1n68s-KKStQ0TC-ZEnBMxe-jeUIutKRER/preview",
+              "thumbnail": "images/inventory_system.png",
+              "tech": ["Unreal Engine", "Blueprints"],
+              "repo": ""
+            },
+            {
+              "id": "personal-experimental-3",
+              "title": "Root Motion",
+              "description": ["This is a root motion–driven experimental built in <h3>Unreal Engine</h3>, designed to explore physically expressive character movement using animation-based locomotion. The project focuses on syncing gameplay mechanics with animation data to create fluid, grounded motion-ideal for cinematic action games.",
+              "<h2>Core Systems & Features</h2>",
+              "✦ <h3>Root Motion Movement System:</h3> All locomotion is driven directly by animation data, ensuring precise foot placement, natural acceleration, and seamless transitions between movement states.",
+              "✦ <h3>Dynamic Jump System:</h3> Jump animations are selected and scaled based on the height of the target surface or obstacle. Includes root motion–based launch and landing for realistic arc and timing.",
+              "✦ <h3>Crouch System:</h3> Smooth transition into crouch using root motion animations. Includes collision adjustments and movement speed scaling for stealth or traversal scenarios.",
+              "✦ <h3>Dash & Roll Mechanics:</h3> Responsive dash and evasive roll actions triggered by player input. Movement is fully handled via root motion, allowing for cinematic momentum and directional control.",
+              "✦ <h3>Animation Sync & Blend Logic:</h3> All movement states are tightly synced with animation curves and blend spaces, ensuring consistent visual feedback and gameplay responsiveness."],
+              "video": "https://drive.google.com/file/d/1FhXJpn6Wqv3jboXnCOff2hVXE3WU1YM_/preview",
+              "thumbnail": "images/root_motion.png",
+              "tech": ["Unreal Engine", "Blueprints"],
+              "repo": ""
+            },
+            {
+              "id": "personal-experimental-4",
+              "title": "Day-Night Cycle",
+              "description": ["This is a high-fidelity 3D environment built in Unity using the <h3>High Definition Render Pipeline (HDRP)</h3>, focused on simulating a realistic day-night cycle with dynamic celestial movement. The project captures real-time transitions of lighting, atmosphere, and shadows-ideal for open-world games, architectural visualization, or cinematic environments.",
+              "<h2>Core Systems & Features</h2>",
+              "✦ <h3>Real-Time Sun & Moon Placement:</h3> The sun and moon are procedurally positioned based on time-of-day logic, with accurate elevation, rotation, and light intensity synced to a virtual clock.",
+              "✦ <h3>HDRP Lighting & Atmosphere:</h3> Uses HDRP’s advanced lighting features including volumetric fog, physically based sky, and dynamic exposure to simulate natural transitions from dawn to dusk and nightfall.",
+              "✦ <h3>Time-Driven Cycle System:</h3> A scalable time manager drives the rotation of celestial bodies, ambient light shifts, and skybox transitions. Supports accelerated or real-time playback.",
+              "✦ <h3>Shadow & Reflection Updates:</h3> Dynamic shadows and screen-space reflections adjust seamlessly with the sun/moon position, enhancing realism across terrain, foliage, and architecture.",
+              "✦ <h3>Captured in Real-Time Engine:</h3> All visuals and lighting transitions are rendered live in Unity’s engine-no baked lighting or pre-rendered sequences. Ideal for showcasing HDRP’s power in interactive environments."],
+              "video": "https://drive.google.com/file/d/1KsHWARdEbjre7tuSIiEuraITmxO9QBZ1/preview",
+              "thumbnail": "images/day_night_cycle.png",
+              "tech": ["Unity (HDRP)", "Environmental Simulation"],
+              "repo": ""
+            }
+        ],
+        "failure": [
+            {
+              "id": "personal-failure-1",
+              "title": "Soul Style - Combo and LockOn Target",
+              "description": ["This is a <h3>Souls-like</h3> experimental demo built in Unreal Engine, designed to explore expressive character movement, reactive combat systems, and intelligent enemy behavior. Though the project faced technical and design challenges, it served as a valuable learning experience in building modular gameplay systems and understanding the complexity of animation-driven combat.",
+              "<h2>Core Systems & Features</h2>",
+              "✦ <h3>Character Movement System:</h3> Includes walk, run, roll, and strafe with root motion–based transitions for grounded responsiveness and cinematic flow.",
+              "✦ <h3>Combat Animation & Combo System, Controller-based input logic featuring:</h3>",
+              "• Chorded Keys for combo branching",
+              "• Held Keys for charge attacks",
+              "• Input Buffers for queuing special moves Designed to simulate timing-based, expressive melee combat.",
+              "✦ <h3>Aim Lock-On System:</h3> Dynamic lock-on targeting with camera alignment, enemy switching, and disengage logic based on distance and visibility.",
+              "✦ <h3>AI Enemies with Combat Abilities:</h3> Behavior Tree–driven enemies capable of attacking and reacting to player actions. Includes animation syncing, hit detection, and stagger logic.",
+              "✦ <h3>Health & Damage System:</h3> Modular health architecture with damage types, invincibility frames, and death triggers for both player and AI entities.",
+              "✦ <h3>Interaction System:</h3> Contextual prompts for pickups, doors, NPCs, and environmental triggers with animation and UI feedback."],
+              "extra": ["What I Learned from This Project",
+              "Root Motion Requires Rigorous Syncing: Implementing walk, run, roll, and strafe with root motion taught me how critical it is to align animation curves, blend spaces, and movement logic. Even small mismatches caused gameplay feel to break.",
+              "Combat Input Systems Are Deeply Layered: Building a controller-based combo system with chorded keys, held inputs, and input buffering revealed how timing, state machines, and animation events must work in harmony. It pushed me to think modularly and anticipate edge cases.",
+              "Lock-On Systems Affect Everything: Adding aim lock-on reshaped how I approached camera control, movement direction, and targeting logic. I learned how even a small system like this ripples across the entire combat experience.",
+              "AI Combat Isn’t Just About Attacking: Designing enemies that could attack, react, and feel fair required a deeper understanding of Behavior Trees, animation syncing, and combat pacing. I learned how to balance aggression with readability.",
+              "Interaction Systems Need Flexibility: Even simple interactions-like picking up items or opening doors-needed clean architecture to avoid bugs and ensure scalability. I learned to separate visual prompts, input handling, and world logic.",
+              "Failure Is a Design Compass: The project didn’t fully meet my vision, but every broken combo, misaligned animation, or AI glitch taught me how to build smarter, cleaner systems next time. It sharpened my instincts for what makes Souls-like combat feel satisfying."],
+              "video": "https://drive.google.com/file/d/13rgSVb2JdGl6rNz6sSEEhCqHEPWWecAT/preview",
+              "thumbnail": "images/soulstyle_combo.png",
+              "tech": ["Unreal Engine", "C++"]
+            },
+            {
+              "id": "personal-failure-2",
+              "title": "Soul Style - Combat system and Enemies",
+              "description": ["This is a combat-focused prototype built in Unreal Engine, Part of above project of <h3>Souls-like</h3> games. Though the project faced limitations and remains incomplete, it served as a hands-on exploration of real-time combat systems, animation-driven movement, and AI behavior. The core loop centers around the player actively fighting AI enemies in a reactive, timing-based environment.",
+              "<h2>Core Systems & Features</h2>",
+              "✦ Character Movement System Includes walk, run, roll, and strafe mechanics with smooth transitions and directional responsiveness. Movement is tightly synced with animation states to preserve weight and pacing.",
+              "✦ Controller-Based Combo System Combat is driven by a modular input system supporting:",
+              "• Light and heavy attacks",
+              "• Chained combos based on input timing",
+              "• Directional attacks and stamina-based restrictions Built to support controller input with layered animation montages and combo branching.",
+              "✦ Aim Lock-On System Players can lock onto enemies for focused combat. The system dynamically adjusts camera orientation, movement direction, and target switching during fights.",
+              "✦ AI Enemies with Combat Behavior Enemies actively engage the player with attack animations, movement logic, and reaction states. They can chase, strike, and reposition during combat, creating a dynamic battlefield.",
+              "✦ Health & Damage System Both player and enemies have modular health components, damage types, and hit reactions. Includes invincibility frames, stagger logic, and death triggers.",
+              "✦ Real-Time Combat Loop The player and enemies fight in live, unscripted encounters. Timing, positioning, and animation syncing are critical. The system supports multiple enemies, combo interruptions, and reactive AI behavior."],
+              "extra": ["What I Learned",
+              "Building real-time combat requires precise animation syncing and input buffering.",
+              "AI behavior must be modular and reactive to feel fair and engaging.",
+              "Lock-on systems affect movement, targeting, and camera flow more than expected.",
+              "Even failed systems reveal how to design better, cleaner, and more scalable mechanics."],
+              "video": "https://drive.google.com/file/d/1efd_H2c4HRaxNd5TUyUSJHiPFu7-oeF4/preview",
+              "thumbnail": "images/soulstyle_fighting.png",
+              "tech": ["Unreal Engine", "C++"]
+            },
+            {
+              "id": "personal-failure-3",
+              "title": "AI Traffic Simulation",
+              "description": ["This is a hybrid-perspective car driving demo built in Unity using the <h3>Universal Render Pipeline (URP)</h3>. The project features both third-person and top-down camera modes, allowing players to switch perspectives while navigating a dynamic urban environment. At its core is an advanced AI traffic system that simulates real-world driving behavior, complete with responsive AI vehicles, traffic flow logic, and intersection handling.",
+              "<h2>Core Systems & Features</h2>",
+              "✦ <h3>Dual Camera Modes:</h3> Seamlessly switch between third-person and top-down views for different gameplay styles-ideal for arcade driving, tactical navigation, or simulation testing.",
+              "✦ <h3>Advanced AI Traffic System:</h3> AI-controlled vehicles follow realistic traffic rules, including:",
+              "• Lane-based navigation and pathfinding",
+              "• Obstacle detection and avoidance",
+              "• Traffic light and stop sign compliance",
+              "• Yielding, overtaking, and intersection logic Designed to mimic real-life traffic behavior in a modular and scalable way.",
+              "✦ <h3>AI Car Behavior:</h3> Each AI vehicle uses waypoint systems, raycasting, and state machines to react to the environment, other cars, and the player. Includes acceleration, braking, turning, and collision avoidance.",
+              "✦ <h3>URP Visuals & Optimization:</h3> Clean, stylized visuals rendered through Unity’s URP for optimized performance and lighting. Supports dynamic shadows, post-processing, and scalable quality settings.",
+              "✦ <h3>Player Driving System:</h3> Responsive car controller with acceleration, braking, steering, and camera-relative movement. Designed for both casual and simulation-style driving."],
+              "extra": ["What I Learned from AI Traffic Simulation",
+              "Realistic Traffic Behavior Is a System of Systems: I discovered that simulating lifelike traffic isn’t just about moving cars-it requires layered systems for lane logic, intersection handling, obstacle detection, and timing coordination.",
+              "Waypoint and State Machines Are Essential: Building AI cars taught me how to use waypoints and state machines to manage transitions between driving, stopping, yielding, and turning. This helped me modularize behavior and avoid spaghetti logic.",
+              "Collision Avoidance Needs Prediction, Not Just Reaction: I learned that reactive avoidance leads to jittery movement. Predictive logic-like raycasting ahead and checking velocity-creates smoother, more believable traffic flow.",
+              "Traffic Lights and Intersections Are Complex but Rewarding: Implementing traffic signals and multi-lane intersections showed me how timing, priority rules, and vehicle communication can make or break immersion.",
+              "Top-Down and Third-Person Views Require Different Design Thinking: Supporting both perspectives taught me how camera framing affects player perception, navigation clarity, and UI placement.",
+              "Debugging AI in Motion Is a Skill in Itself: I gained experience using gizmos, visual debuggers, and runtime logs to track AI decisions and fix unexpected behavior in real time."],
+              "video": "https://drive.google.com/file/d/1VtESJ-xCWE_v6vm09sp97nQdo4PxKmwK/preview",
+              "thumbnail": "images/traffic_system.png",
+              "tech": ["Unity (URP)", "Driving Simulator"]
+            }
+        ]
+    }
+  },
+  "contact": {
+    "email": "id.manishkumarsingh@gmail.com",
+    "phone": "+91 915350-5989",
+    "location": "Hyderabad, India",
+    "social": {
+      "github": "https://github.com/progmanish",
+      "linkedin": "https://www.linkedin.com/in/progmanish/",
+      "instagram": "https://www.instagram.com/theaagstya/"
+    }
+  }
+}
