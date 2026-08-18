@@ -15,6 +15,8 @@ const reader = ref(null)
 const activeCat = ref('all')
 
 const SPEED = 11
+const isMobile = /Mobi|Android|iPhone|iPad|IEMobile|Opera Mini/i.test(navigator.userAgent || '')
+const TYPE_BATCH = isMobile ? 3 : 1
 let timer = null
 let pending = null
 
@@ -158,7 +160,7 @@ function select(id, instant = false, open = true) {
   typing.value = !instant
   if (!instant) {
     timer = setInterval(() => {
-      charsShown.value++
+      charsShown.value += TYPE_BATCH
       if (charsShown.value >= totalChars(e)) { stopTimer(); typing.value = false }
     }, SPEED)
   }

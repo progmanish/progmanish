@@ -117,6 +117,9 @@ defineEmits(['select'])
     box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.35);
   }
   .tabnav::-webkit-scrollbar { display: none; }
+  .tabnav {
+    backdrop-filter: blur(4px);
+  }
   .tab-item {
     flex: 1 1 0;
     min-width: 0;

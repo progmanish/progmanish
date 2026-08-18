@@ -338,3 +338,14 @@ input[type='range']::-moz-range-thumb {
         display: none;
     }
 }
+
+/* ---------- Mobile performance: disable heavy GPU effects ---------- */
+@media (max-width: 760px) {
+    .world-bg::before {
+        filter: none;
+        animation: none;
+    }
+    .panel {
+        backdrop-filter: blur(4px);
+    }
+}

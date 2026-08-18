@@ -1,5 +1,8 @@
 import { tell } from '../stores/companion'
 
+const ua = navigator.userAgent || ''
+const isMobile = /Mobi|Android|iPhone|iPad|IEMobile|Opera Mini/i.test(ua)
+
 const STYLE = `
 #sec-warn {
   position: fixed;
@@ -43,6 +46,14 @@ function ensureEl() {
 }
 
 export function installSecurity() {
+  if (isMobile) {
+    const css = document.createElement('style')
+    css.textContent =
+      'body { -webkit-user-select: none; user-select: none; } input, textarea { -webkit-user-select: text; user-select: text; }'
+    document.head.appendChild(css)
+    return
+  }
+
   ensureEl()
 
   document.addEventListener(
