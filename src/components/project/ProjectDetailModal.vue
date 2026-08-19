@@ -347,4 +347,29 @@ function descLines() {
   color: var(--bg-0);
   box-shadow: 0 0 20px var(--glow);
 }
+
+@media (max-width: 760px) {
+  .modal-mask {
+    padding: 10px;
+  }
+  .modal {
+    max-height: 90vh;
+  }
+  .video-box iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .mb-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    color: var(--text-dim);
+    font-family: var(--font-display);
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
 </style>

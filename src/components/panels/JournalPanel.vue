@@ -718,7 +718,7 @@ watch(
   padding: 12px clamp(22px, 3.5vw, 44px) 26px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 .r-body p {
   font-family: var(--font-display);
@@ -913,20 +913,34 @@ watch(
   .r-meta { margin-bottom: 10px; gap: 8px; }
   .r-readtime, .r-idx, .r-prev { display: none; }
   .r-title { font-size: 24px; line-height: 1.3;}
-  .r-body { padding: 10px 14px 20px; gap: 12px; }
+  .r-body { padding: 10px 14px 20px; gap: 1px; }
   .r-body p { font-size: 18px; line-height: 1.75; padding-left: 12px; }
   .r-nav { padding: 10px 14px 14px; }
   .nav-btn { padding: 9px 12px; font-size: 10px; }
   .nav-pos { display: none; }
 
+  .bl-h2 {
+    margin: 15px 0 6px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+  }
+
+  .bl-h3 {
+    margin: 14px 0 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+
   .corner {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  z-index: 40;
-  pointer-events: none;
-  opacity: 0.9;
-  display: none;
-}
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    z-index: 40;
+    pointer-events: none;
+    opacity: 0.9;
+    display: none;
+  }
 }
 </style>

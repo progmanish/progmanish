@@ -1053,7 +1053,7 @@ const socials = computed(() => Object.entries(contact.value?.social || {}))
   overflow-y: auto;
   padding: 12px 14px;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.3;
 }
 .term-body::-webkit-scrollbar { width: 6px; }
 .term-body::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
@@ -1344,5 +1344,16 @@ const socials = computed(() => Object.entries(contact.value?.social || {}))
   .outfit { display: block; overflow-y: auto; }
   .left { border-right: none; border-bottom: 1px solid var(--line); overflow: visible; }
   .right { overflow: visible; }
+    .lore p {
+    color: var(--text-dim);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .term-body { height: 250px; line-height: 1.2; font-size: 16px;}
+  .obj-desc {
+    display: none;
+  }
 }
 </style>

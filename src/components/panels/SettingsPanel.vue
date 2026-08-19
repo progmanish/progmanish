@@ -762,5 +762,6 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
   .s-foot { display: none; }
 
   .corner { display: none; position: absolute; width: 18px; height: 18px; z-index: 40; pointer-events: none; opacity: 0.9; }
+  .about { font-family: var(--font-display); font-size: 14px; line-height: 1.2; color: var(--text-dim); }
 }
 </style>
