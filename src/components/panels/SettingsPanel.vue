@@ -237,7 +237,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
               </div>
 
               <div class="sys-card">
-                <div class="sys-line"><span class="sys-k">ENGINE</span><span class="sys-v">PROMANISH.ENGINE</span></div>
+                <div class="sys-line"><span class="sys-k">ENGINE</span><span class="sys-v">PROGMANISH.ENGINE</span></div>
                 <div class="sys-line"><span class="sys-k">BUILD</span><span class="sys-v">v2.0.0</span></div>
                 <div class="sys-line"><span class="sys-k">PROFILE</span><span class="sys-v">local-storage ✓</span></div>
                 <div class="sys-line"><span class="sys-k">THEME</span><span class="sys-v" :style="{ color: 'var(--accent)' }">{{ settings.theme.toUpperCase() }}</span></div>

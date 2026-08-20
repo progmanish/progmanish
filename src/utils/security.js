@@ -68,18 +68,18 @@ export function installSecurity() {
 
   document.addEventListener('dragstart', (e) => e.preventDefault())
 
-  // document.addEventListener(
-  //   'keydown',
-  //   (e) => {
-  //     const k = (e.key || '').toUpperCase()
-  //     const ctrl = e.ctrlKey || e.metaKey
-  //     const shift = e.shiftKey
-  //     if (e.key === 'F12') return block(e, 'blocked_f12')
-  //     if (ctrl && shift && ['I', 'J', 'C', 'K', 'U'].includes(k)) return block(e, 'blocked_key')
-  //     if (ctrl && !shift && ['U', 'S', 'P'].includes(k)) return block(e, 'blocked_key')
-  //   },
-  //   true
-  // )
+  document.addEventListener(
+    'keydown',
+    (e) => {
+      const k = (e.key || '').toUpperCase()
+      const ctrl = e.ctrlKey || e.metaKey
+      const shift = e.shiftKey
+      if (e.key === 'F12') return block(e, 'blocked_f12')
+      if (ctrl && shift && ['I', 'J', 'C', 'K', 'U'].includes(k)) return block(e, 'blocked_key')
+      if (ctrl && !shift && ['U', 'S', 'P'].includes(k)) return block(e, 'blocked_key')
+    },
+    true
+  )
 
   function block(e, type) {
     e.preventDefault()
