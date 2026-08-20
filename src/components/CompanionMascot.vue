@@ -5,7 +5,7 @@ import { companionBus, messageFor } from '../stores/companion'
 import { questlog } from '../stores/questlog'
 import { playCoin, playGameOver, playPet, playStart, playUnlock } from '../utils/sfx'
 
-const { settings } = useSettings()
+const { settings, isLowEnd } = useSettings()
 
 const pet = ref(null)
 const spriteEl = ref(null)
@@ -347,19 +347,108 @@ function petOnce() {
   saveMini(rec)
   bond.value = rec.bond
   playPet()
-  for (let i = 0; i < 6; i++) {
+  const heartCount = isLowEnd ? 2 : 6
+  for (let i = 0; i < heartCount; i++) {
     hearts.value.push({ id: ++heartId, x: px + 50 + rnd(-26, 26), y: py + rnd(-18, 14), at: performance.now() })
   }
   setMsg(messageFor('pet') || 'Boop!', 2400)
 }
 
-function onClick(e) {
+const isDragging = ref(false)
+let dragOffX = 0
+let dragOffY = 0
+let pausedAction = null
+let pausedPhase = null
+
+function onDragStart(e) {
   if (game.value?.active || game.value?.over) return
+  const d = Math.hypot(e.clientX - (px + 51), e.clientY - (py + 56))
+  if (d > 65) return
+  isDragging.value = true
+  pausedAction = action
+  pausedPhase = phase
+  action = 'sit'
+  phase = 'do'
+  dragOffX = e.clientX - px
+  dragOffY = e.clientY - py
+  e.preventDefault()
+  window.addEventListener('pointermove', onDragMove)
+  window.addEventListener('pointerup', onDragEnd)
+}
+
+function onDragMove(e) {
+  if (!isDragging.value) return
+  const navPad = window.innerWidth <= 760 ? 80 : 47
+  px = Math.max(0, Math.min(window.innerWidth - 102, e.clientX - dragOffX))
+  py = Math.max(0, Math.min(window.innerHeight - navPad - 113, e.clientY - dragOffY))
+  render()
+}
+
+let swipeStartX = 0
+let swipeStartY = 0
+let swipeStartTime = 0
+let swipeTapCount = 0
+let swipeTapTimer = null
+
+function onTouchStart(e) {
+  if (e.touches.length !== 1) return
+  swipeStartX = e.touches[0].clientX
+  swipeStartY = e.touches[0].clientY
+  swipeStartTime = performance.now()
+}
+
+function onTouchEnd(e) {
+  const dt = performance.now() - swipeStartTime
+  if (dt > 800) return
+  const t = e.changedTouches[0]
+  const dx = t.clientX - swipeStartX
+  const dy = t.clientY - swipeStartY
+  const dist = Math.hypot(dx, dy)
+
+  if (dist > 30) {
+    const angle = Math.atan2(dy, dx)
+    let dir
+    if (angle > -0.75 && angle < 0.75) dir = 'right'
+    else if (angle > 0.75 && angle < 2.35) dir = 'down'
+    else if (angle < -0.75 && angle > -2.35) dir = 'left'
+    else dir = 'up'
+    window.dispatchEvent(new CustomEvent('konami-swipe', { detail: { up: 'ArrowUp', down: 'ArrowDown', left: 'ArrowLeft', right: 'ArrowRight' }[dir] }))
+  } else if (dist < 15) {
+    swipeTapCount++
+    clearTimeout(swipeTapTimer)
+    swipeTapTimer = setTimeout(() => { swipeTapCount = 0 }, 2500)
+    if (swipeTapCount === 1) {
+      if (action !== 'sleep' && !game.value?.active && !game.value?.over) petOnce()
+    } else if (swipeTapCount >= 2) {
+      swipeTapCount = 0
+      clearTimeout(swipeTimer)
+      if (!game.value?.active && !game.value?.over) startGame()
+    }
+  }
+}
+
+function onDragEnd() {
+  if (!isDragging.value) return
+  isDragging.value = false
+  window.removeEventListener('pointermove', onDragMove)
+  window.removeEventListener('pointerup', onDragEnd)
+  setMood('happy', 2000)
+  setMsg(messageFor('pet') || 'Aah, new spot!', 2400)
+  setTimeout(() => {
+    action = pausedAction || 'sit'
+    phase = pausedPhase || 'do'
+    dur = rnd(1500, 3000)
+  }, 1200)
+}
+
+function onClick(e) {
+  if (isDragging.value || game.value?.active || game.value?.over) return
   const d = Math.hypot(e.clientX - (px + 51), e.clientY - (py + 56))
   if (d < 55 && action !== 'sleep') petOnce()
 }
 
 function onDblClick(e) {
+  if (isDragging.value) return
   const d = Math.hypot(e.clientX - (px + 51), e.clientY - (py + 56))
   if (d < 55) startGame()
 }
@@ -369,12 +458,16 @@ onMounted(() => {
   window.addEventListener('pointermove', onPointer, { passive: true })
   window.addEventListener('click', onClick, { passive: true })
   window.addEventListener('dblclick', onDblClick, { passive: true })
+  if (spriteEl.value) spriteEl.value.addEventListener('pointerdown', onDragStart)
   if (!settings.reducedMotion) raf = requestAnimationFrame(tick)
 })
 onBeforeUnmount(() => {
   window.removeEventListener('pointermove', onPointer)
   window.removeEventListener('click', onClick)
   window.removeEventListener('dblclick', onDblClick)
+  if (spriteEl.value) spriteEl.value.removeEventListener('pointerdown', onDragStart)
+  window.removeEventListener('pointermove', onDragMove)
+  window.removeEventListener('pointerup', onDragEnd)
   cancelAnimationFrame(raf)
 })
 </script>
@@ -383,8 +476,10 @@ onBeforeUnmount(() => {
   <div
     ref="pet"
     class="mascot"
-    :class="[state, { sleep: sleeping, 'mood-happy': mood === 'happy', 'mood-surprised': mood === 'surprised' }]"
+    :class="[state, { sleep: sleeping, 'mood-happy': mood === 'happy', 'mood-surprised': mood === 'surprised', dragging: isDragging, 'low-end': isLowEnd }]"
     aria-hidden="true"
+    @touchstart.passive="onTouchStart"
+    @touchend.passive="onTouchEnd"
   >
     <div class="bubble" v-if="msg">{{ msg }}</div>
     <span class="zzz">
@@ -393,7 +488,7 @@ onBeforeUnmount(() => {
     <span class="shadow"></span>
     <div class="dust"><span></span><span></span><span></span></div>
 
-    <div ref="spriteEl" class="sprite-wrap" :style="{ transform: 'scaleX(' + facing + ')' }">
+    <div ref="spriteEl" class="sprite-wrap" :style="{ '--f': facing }">
       <svg
         class="sprite view-front"
         viewBox="0 0 96 106"
@@ -594,7 +689,8 @@ onBeforeUnmount(() => {
 }
 .mascot.sleep .shadow { width: 58px; }
 
-.sprite-wrap { position: relative; transform-origin: center; }
+.sprite-wrap { position: relative; transform-origin: center; will-change: transform; pointer-events: auto; cursor: grab; transform: scaleX(var(--f, 1)); }
+.mascot.dragging .sprite-wrap { cursor: grabbing; }
 .sprite {
   display: block;
   animation: floaty 2.6s ease-in-out infinite;
@@ -927,5 +1023,30 @@ onBeforeUnmount(() => {
   .game-layer .go-card {
     animation: none !important;
   }
+}
+
+/* low-end device optimizations */
+.mascot.low-end .sprite {
+  animation: floaty 4s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+}
+.mascot.low-end .spark,
+.mascot.low-end .dust {
+  display: none;
+}
+.mascot.low-end .flame {
+  animation: none;
+}
+.mascot.low-end .antenna-ball,
+.mascot.low-end .chest-btn {
+  animation: none;
+}
+
+/* mobile size */
+@media (max-width: 760px) {
+  .sprite-wrap { transform: scaleX(var(--f, 1)) scale(0.6) !important; }
+  .bubble { font-size: 11px; max-width: 140px; bottom: 60px; }
+  .shadow { width: 44px; height: 8px; left: 10px; bottom: 2px; }
+  .zzz { font-size: 10px; top: -14px; }
 }
 </style>

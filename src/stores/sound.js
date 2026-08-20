@@ -12,6 +12,7 @@ const state = reactive({
 })
 
 let rafId = null
+let lastTick = 0
 
 export function useSound() {
   return state
@@ -27,6 +28,7 @@ export async function startMusic() {
   audio.src = import.meta.env.BASE_URL + 'audio/bgm_main.mp3'
   audio.loop = true
   audio.volume = settings.musicVolume / 100
+  audio.preload = 'auto'
   state.audio = audio
 
   const Ctx = window.AudioContext || window.webkitAudioContext
@@ -58,7 +60,12 @@ export async function startMusic() {
   tick()
 }
 
-function tick() {
+function tick(now) {
+  if (!state.playing && !state.analyser) return
+  rafId = requestAnimationFrame(tick)
+  if (now - lastTick < 50) return
+  lastTick = now
+
   const { analyser } = state
   if (analyser) {
     const data = new Uint8Array(analyser.frequencyBinCount)
@@ -68,7 +75,6 @@ function tick() {
     const avg = sum / (data.length / 2) / 255
     state.beat = Math.min(1, avg * 1.9)
   }
-  rafId = requestAnimationFrame(tick)
 }
 
 export function applyMusicSettings() {
@@ -78,11 +84,12 @@ export function applyMusicSettings() {
     if (state.ctx && state.ctx.state === 'suspended') state.ctx.resume()
     if (!state.playing) {
       state.audio.play()
-        .then(() => { state.playing = true })
+        .then(() => { state.playing = true; tick() })
         .catch(() => {})
     }
   } else {
     state.audio.pause()
     state.playing = false
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null }
   }
 }

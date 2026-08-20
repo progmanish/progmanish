@@ -9,7 +9,7 @@ import { questlog } from './stores/questlog'
 import { tell } from './stores/companion'
 
 const { data, loading } = usePortfolioData()
-const { settings } = useSettings()
+const { settings, isLowEnd, isMobile } = useSettings()
 
 const booted = ref(false)
 const activeTab = ref('outfit')
@@ -41,7 +41,7 @@ let trailDots = []
 
 function initTrail() {
   const canvas = document.getElementById('mouseTrail')
-  if (!canvas) return
+  if (!canvas || isLowEnd) return
   trailCtx = canvas.getContext('2d')
   resizeTrail()
   window.addEventListener('resize', resizeTrail)
@@ -55,7 +55,7 @@ function initTrail() {
       a: 1,
       dec: Math.random() * 0.03 + 0.012
     })
-    if (trailDots.length > 120) trailDots.shift()
+    if (trailDots.length > 60) trailDots.shift()
   }
   window.addEventListener('mousemove', addDot)
 
@@ -67,8 +67,6 @@ function initTrail() {
       trailCtx.beginPath()
       trailCtx.arc(d.x, d.y, d.r, 0, Math.PI * 2)
       trailCtx.fillStyle = `rgba(${accentRGB()}, ${d.a})`
-      trailCtx.shadowBlur = 12
-      trailCtx.shadowColor = 'rgba(255,255,255,0.6)'
       trailCtx.fill()
       d.a -= d.dec
     }
@@ -105,7 +103,7 @@ let glyphs = []
 
 function initWorldFX() {
   const canvas = document.getElementById('worldFX')
-  if (!canvas) return
+  if (!canvas || (isLowEnd && !settings.bgFx)) return
   fxCtx = canvas.getContext('2d')
   resizeFX()
   window.addEventListener('resize', resizeFX)
@@ -154,11 +152,20 @@ function initWorldFX() {
       rot: (Math.random() - 0.5) * 0.5
     }
   }
-  smoke = Array.from({ length: Math.min(10, Math.max(6, Math.round(window.innerWidth / 170))) }, makeSmoke)
-  glyphs = Array.from({ length: Math.min(18, Math.max(10, Math.round(window.innerWidth / 80))) }, makeGlyph)
 
-  const draw = () => {
+  const smokeCount = isLowEnd ? 3 : Math.min(10, Math.max(6, Math.round(window.innerWidth / 170)))
+  const glyphCount = isLowEnd ? 4 : Math.min(18, Math.max(10, Math.round(window.innerWidth / 80)))
+  smoke = Array.from({ length: smokeCount }, makeSmoke)
+  glyphs = Array.from({ length: glyphCount }, makeGlyph)
+
+  let lastFrame = 0
+  const frameInterval = isLowEnd ? 32 : 16
+
+  const draw = (now) => {
     fxRaf = requestAnimationFrame(draw)
+    if (now - lastFrame < frameInterval) return
+    lastFrame = now
+
     const ctx = fxCtx
     if (!ctx) return
     const reduced = document.documentElement.classList.contains('reduced-motion')
@@ -166,7 +173,7 @@ function initWorldFX() {
     const h = window.innerHeight
     ctx.clearRect(0, 0, w, h)
 
-    if (!reduced) {
+    if (!reduced && settings.bgFx) {
       ctx.save()
       ctx.globalCompositeOperation = 'screen'
       for (const s of smoke) {
@@ -195,7 +202,7 @@ function initWorldFX() {
       ctx.restore()
     }
   }
-  draw()
+  fxRaf = requestAnimationFrame(draw)
 
   return () => {
     window.removeEventListener('resize', resizeFX)
@@ -227,6 +234,20 @@ let konamiIndex = 0
 let konamiTimer = null
 const konamiFx = ref(false)
 const konamiPieces = ref([])
+
+function onSwipeInput(code) {
+  if (code === KONAMI[konamiIndex]) {
+    konamiIndex++
+    if (konamiIndex === KONAMI.length) {
+      konamiIndex = 0
+      triggerKonami()
+      tell('konami')
+      questlog.mark('konami')
+    }
+  } else {
+    konamiIndex = code === KONAMI[0] ? 1 : 0
+  }
+}
 
 function triggerKonami() {
   konamiPieces.value = Array.from({ length: 26 }, () => {
@@ -266,11 +287,13 @@ onMounted(() => {
   document.documentElement.setAttribute('data-theme', settings.theme)
   window.addEventListener('keydown', onResetKey)
   window.addEventListener('keydown', onCheatKey)
+  window.addEventListener('konami-swipe', (e) => onSwipeInput(e.detail))
   const cleanup = initTrail()
   const cleanupFX = initWorldFX()
   onBeforeUnmount(() => {
     window.removeEventListener('keydown', onResetKey)
     window.removeEventListener('keydown', onCheatKey)
+    window.removeEventListener('konami-swipe', onSwipeInput)
     cleanup && cleanup()
     cleanupFX && cleanupFX()
   })
@@ -280,7 +303,7 @@ onMounted(() => {
 <template>
   <div class="world-bg" aria-hidden="true"></div>
   <canvas id="worldFX" v-show="settings.bgFx" aria-hidden="true"></canvas>
-  <canvas id="mouseTrail" v-show="settings.bgFx" aria-hidden="true"></canvas>
+  <canvas id="mouseTrail" v-show="settings.bgFx && !isLowEnd" aria-hidden="true"></canvas>
 
   <div v-if="!booted" class="boot-zone">
     <BootScreen :loading="loading" @start="handleStart" />
@@ -293,7 +316,7 @@ onMounted(() => {
     @update:tab="(t) => { activeTab = t; tell('tab', t) }"
   />
 
-  <CompanionMascot v-if="booted" />
+  <CompanionMascot v-if="booted && !isMobile" />
 
   <Transition name="konami">
     <div v-if="konamiFx" class="konami-burst" aria-hidden="true">
@@ -373,9 +396,3 @@ onMounted(() => {
 .konami-enter-active, .konami-leave-active { transition: opacity 0.3s ease; }
 .konami-enter-from, .konami-leave-to { opacity: 0; }
 </style>
-
-
-
-
-
-

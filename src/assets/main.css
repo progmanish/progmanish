@@ -345,7 +345,22 @@ input[type='range']::-moz-range-thumb {
         filter: none;
         animation: none;
     }
+    .world-bg::after {
+        opacity: 0.08;
+    }
     .panel {
         backdrop-filter: blur(4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
+    .panel::before {
+        box-shadow: none;
+    }
+    .seg button { transition: color 0.15s ease; }
+    .seg button.active { box-shadow: inset 0 0 8px var(--glow-soft); }
+}
+
+/* GPU compositing hints for animated elements */
+.world-bg, .world-bg::before, #worldFX, #mouseTrail {
+    will-change: transform;
+    contain: layout style;
 }

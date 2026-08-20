@@ -14,9 +14,8 @@ const progress = ref(0)
 const reader = ref(null)
 const activeCat = ref('all')
 
-const SPEED = 11
 const isMobile = /Mobi|Android|iPhone|iPad|IEMobile|Opera Mini/i.test(navigator.userAgent || '')
-const TYPE_BATCH = isMobile ? 3 : 1
+const SPEED = isMobile ? 30 : 11
 let timer = null
 let pending = null
 
@@ -160,7 +159,7 @@ function select(id, instant = false, open = true) {
   typing.value = !instant
   if (!instant) {
     timer = setInterval(() => {
-      charsShown.value += TYPE_BATCH
+      charsShown.value++
       if (charsShown.value >= totalChars(e)) { stopTimer(); typing.value = false }
     }, SPEED)
   }
@@ -649,7 +648,7 @@ watch(
   flex: 1;
   min-width: 0;
   overflow-y: auto;
-  padding: 15px;
+  padding: 10px;
   background: linear-gradient(180deg, var(--panel-hi), var(--panel));
 }
 
@@ -867,7 +866,7 @@ watch(
   .j-controls { display: none; }
   .eyebrow, .j-sub { display: none; }
   .j-prompt { display: none;}
-  .j-titlebox h2 { font-size: 25px; letter-spacing: 1px; padding-top: 6px; }
+  .j-titlebox h2 { font-size: 22px; padding-top: 6px; }
 
   .win-bar { display: none; }
   .filters {
@@ -912,27 +911,32 @@ watch(
   .r-head { padding: 16px 14px 4px; }
   .r-meta { margin-bottom: 10px; gap: 8px; }
   .r-readtime, .r-idx, .r-prev { display: none; }
-  .r-title { font-size: 24px; line-height: 1.3;}
-  .r-body { padding: 10px 14px 20px; gap: 1px; }
-  .r-body p { font-size: 18px; line-height: 1.75; padding-left: 12px; }
+  .r-title { font-size: 24px; line-height: 1.2;}
+  .r-body { padding: 10px 14px 20px; gap: 0px; }
+  .r-body p { font-size: 15px; line-height: 1.4; padding-left: 8px; }
   .r-nav { padding: 10px 14px 14px; }
   .nav-btn { padding: 9px 12px; font-size: 10px; }
   .nav-pos { display: none; }
 
   .bl-h2 {
     margin: 15px 0 6px;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 1.5px;
     color: var(--accent);
   }
 
   .bl-h3 {
     margin: 14px 0 4px;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 1px;
     color: var(--accent);
   }
 
+  .bl-line {
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: 1px;
+  }
   .corner {
     position: absolute;
     width: 18px;

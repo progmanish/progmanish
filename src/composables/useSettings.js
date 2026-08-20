@@ -2,19 +2,31 @@ import { reactive } from 'vue'
 
 const STORAGE_KEY = 'progmanish-settings'
 
+const ua = navigator.userAgent || ''
+const isMobile = /Mobi|Android|iPhone|iPad|IEMobile|Opera Mini/i.test(ua)
+const lowCores = (navigator.hardwareConcurrency || 4) <= 2
+const lowMemory = navigator.deviceMemory != null && navigator.deviceMemory <= 2
+const isLowEnd = isMobile || lowCores || lowMemory
+
 const defaults = {
   music: true,
   musicVolume: 75,
   fx: true,
   theme: 'east',
-  bgFx: true,
-  reducedMotion: false
+  bgFx: !isLowEnd,
+  reducedMotion: isLowEnd
 }
 
 function load() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    return raw ? { ...defaults, ...JSON.parse(raw) } : { ...defaults }
+    if (!raw) return { ...defaults }
+    const saved = JSON.parse(raw)
+    if (isLowEnd) {
+      saved.bgFx = false
+      saved.reducedMotion = true
+    }
+    return { ...defaults, ...saved }
   } catch {
     return { ...defaults }
   }
@@ -34,6 +46,8 @@ export function useSettings() {
   return {
     settings,
     save,
+    isLowEnd,
+    isMobile,
     reset() {
       Object.assign(settings, defaults)
       save()

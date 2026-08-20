@@ -718,7 +718,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
 @media (max-width: 760px) {
   .s-head { padding: 20px 25px; align-items: center; gap: 10px; }
   .s-kicker, .s-ver { display: none; }
-  .head-name { font-size: 25px;}
+  .head-name { font-size: 22px;}
   .reset-btn { padding: 8px 10px; }
   .reset-btn span { display: none; }
   .reset-btn i { font-size: 16px; margin: 0; }

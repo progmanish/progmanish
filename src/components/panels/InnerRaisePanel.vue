@@ -756,7 +756,7 @@ function masteryClass(level) {
   .sky-area { height: 100%; }
   .eyebrow, .sa-sub { display: none; }
   .sa-prompt { display: none;}
-  .sa-titlebox h2 { font-size: 25px; letter-spacing: 1px; padding-top: 6px; }
+  .sa-titlebox h2 { font-size: 22px; padding-top: 1px; }
 
   .rank-card { display: none; }
 
@@ -764,12 +764,12 @@ function masteryClass(level) {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 15px 0 15px;
+    gap: 10px;
+    padding: 10px 0 10px;
   }
   .br-dot {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     display: grid;
     place-items: center;
     font-size: 16px;

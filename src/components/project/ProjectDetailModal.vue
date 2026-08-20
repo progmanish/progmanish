@@ -212,7 +212,7 @@ function descLines() {
 }
 
 .mb-head { margin-bottom: 16px; }
-.mb-head h2 { font-size: clamp(18px, 2.4vw, 26px); }
+.mb-head h2 { font-size: clamp(19px, 2.4vw, 26px); }
 .mb-title {
   font-family: var(--font-display);
   font-size: clamp(20px, 2.6vw, 30px);
@@ -361,14 +361,42 @@ function descLines() {
     width: 100%;
     height: 100%;
   }
+
+  .mb-desc .desc-h2 {
+    margin: 12px 0 4px;
+    font-size: 16px;
+    letter-spacing: 1.4px;
+    color: var(--accent);
+  }
+  .mb-desc .desc-h3 {
+    margin: 10px 0 4px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--accent);
+  }
+
   .mb-desc {
     display: flex;
     flex-direction: column;
     gap: 1px;
     color: var(--text-dim);
     font-family: var(--font-display);
-    font-size: 18px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
     line-height: 1.4;
+  }
+
+  .mb-desc .desc-seg.desc-head.is-h2 {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .mb-desc .desc-seg.desc-head.is-h3 {
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: var(--accent);
+    font-weight: 500;
   }
 }
 

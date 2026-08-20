@@ -122,13 +122,13 @@ function run(cmd) {
     case 'help':
       type([
         { text: 'AVAILABLE COMMANDS', cls: 'head' },
-        { text: '  help        list commands', cls: 'dim' },
-        { text: '  whoami      identify the developer', cls: 'dim' },
-        { text: '  skills      list every skill + mastery', cls: 'dim' },
-        { text: '  focus <s>   deep-dive a skill  (ex: focus unreal)', cls: 'dim' },
-        { text: '  build       compile the portfolio', cls: 'dim' },
-        { text: '  cheatcode   try it, dev', cls: 'dim' },
-        { text: '  clear       wipe the terminal', cls: 'dim' }
+        { text: ' help       list commands', cls: 'dim' },
+        { text: ' whoami     identify the developer', cls: 'dim' },
+        { text: ' skills     list every skill + mastery', cls: 'dim' },
+        { text: ' focus <s>  deep-dive a skill  (ex: focus unreal)', cls: 'dim' },
+        { text: ' build      compile the portfolio', cls: 'dim' },
+        { text: ' cheatcode  try it, dev', cls: 'dim' },
+        { text: ' clear      wipe the terminal', cls: 'dim' }
       ])
       break
     case 'whoami':
@@ -167,9 +167,9 @@ function run(cmd) {
     case 'build':
       type([
         { text: 'compiling portfolio...', cls: 'dim' },
-        { text: '  > bundling components........ ok', cls: 'dim' },
-        { text: '  > baking shaders............ ok', cls: 'dim' },
-        { text: '  > inlining experience....... ok', cls: 'dim' },
+        { text: ' > bundling components........ ok', cls: 'dim' },
+        { text: ' > baking shaders............ ok', cls: 'dim' },
+        { text: ' > inlining experience....... ok', cls: 'dim' },
         { text: '✓ BUILD SUCCESS - 0 errors, 0 warnings', cls: 'ok', wait: 150 }
       ])
       break
@@ -1343,17 +1343,57 @@ const socials = computed(() => Object.entries(contact.value?.social || {}))
 @media (max-width: 760px) {
   .outfit { display: block; overflow-y: auto; }
   .left { border-right: none; border-bottom: 1px solid var(--line); overflow: visible; }
+
+  .np-name {
+    font-family: var(--font-display);
+    font-size: clamp(23px, 2.4vw, 29px);
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+    background: linear-gradient(180deg, #ffffff, var(--accent-bright));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 14px var(--glow));
+  }
+
   .right { overflow: visible; }
     .lore p {
     color: var(--text-dim);
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 17px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.3;
   }
-  .term-body { height: 250px; line-height: 1.2; font-size: 16px;}
+  .term-body { height: 250px; line-height: 1.1; font-size: 16px;}
   .obj-desc {
     display: none;
+  }
+
+  .social-btn {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 20px;
+    color: var(--text-dim);
+    transition: all 0.22s ease;
+  }
+
+  .cta { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-primary {
+
+    gap: 5px;
+    padding: 8px 10px;
+    letter-spacing: 0.5px;
+  }
+  .btn-ghost {
+    gap: 5px;
+    padding: 8px 10px;
+    letter-spacing: 0.5px;
   }
 }
 </style>

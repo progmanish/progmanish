@@ -149,4 +149,9 @@ async function start() {
   letter-spacing: 4px;
   color: var(--text-dim);
 }
+
+@media (max-width: 760px) {
+  .aura { filter: blur(10px); }
+  .logo { text-shadow: 0 0 12px var(--glow); }
+}
 </style>

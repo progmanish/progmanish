@@ -219,7 +219,7 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKeydown))
   .inv { position: relative; }
   .inv-title .eyebrow, .inv-sub { display: none; }
   .inv-prompt {display: none;}
-  .inv-title h2 { font-size: 25px; letter-spacing: 1px; padding-top: 6px;}
+  .inv-title h2 { font-size: 22px; padding-top: 8px;}
   .inv-controls { width: 50%; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
   .inv-foot { display: none; }
